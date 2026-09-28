@@ -19,6 +19,12 @@ class User(Base):
 
     posts: Mapped[list["Post"]] = relationship(back_populates="author")
 
+class Member(Base):
+    __tablename__ = "members"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(String(255), nullable=False)
+
 
 class Post(Base):
     """Added after the initial migration — run `alembic revision --autogenerate`
