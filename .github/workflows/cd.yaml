@@ -1,9 +1,9 @@
-#NOTE: this is an example and not meant to run as-is
-deploy:
-  steps:
-    - name: Run migrations
-      run: alembic upgrade head
-      env:
-        DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}
-    - name: Deploy app
-      run: ./deploy.sh   # only runs after migrations succeed
+# #NOTE: this is an example and not meant to run as-is
+# deploy:
+#   steps:
+#     - name: Run migrations
+#       run: alembic upgrade head
+#       env:
+#         DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}
+#     - name: Deploy app
+#       run: ./deploy.sh   # only runs after migrations succeed
