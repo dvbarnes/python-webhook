@@ -35,6 +35,6 @@ class Post(Base):
     title: Mapped[str] = mapped_column(String(255), nullable=False)
     body: Mapped[str] = mapped_column(Text, nullable=False)
     author_id: Mapped[int] = mapped_column(ForeignKey("users.id"), nullable=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now(datetime.timezone.utc))
 
     author: Mapped["User"] = relationship(back_populates="posts")
